@@ -408,6 +408,9 @@ case "${TOOL}" in
         fi
         massagePkgSpecForVendor
         
+        step "Running: cd client && npm build && cd .."
+        cd client && npm build && cd ..
+
         step "Running: go install -v ${FLAGS[@]} ${pkgs}"
         go install -v "${FLAGS[@]}" ${pkgs} 2>&1
     ;;
